@@ -50,11 +50,11 @@ operation.attempt(function (currentAttempt) {
   }
 
   ls.on('exit', (code, signal) => {
-    retryOrExit(code !== 0);
+    retryOrExit(code);
   });
 
   ls.on('error', (err) => {
-    retryOrExit(err);
+    retryOrExit(-1);
   });
 
 });
